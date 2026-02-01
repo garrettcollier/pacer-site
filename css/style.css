@@ -715,12 +715,12 @@ label.error{
 .header-phone{
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  font-size: 0.81em;
+  font-size: 1em;
   letter-spacing: 0.32em;
   position: absolute;
   z-index: 3;
   color: #fff;
-  left: 50vmin;
+  left: 45vmin;
   top:5.9vmin;
   text-decoration: none;
 }
@@ -729,7 +729,7 @@ label.error{
   color:#c5a47e;
 }
 
- @media (max-width: 480px){
+ /* @media (max-width: 480px){
   .header-phone{
     display: none;
   }
@@ -739,7 +739,7 @@ label.error{
   .header-phone{
     display: none;
   }
- }
+ } */
 
 
 
