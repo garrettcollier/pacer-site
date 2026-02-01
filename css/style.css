@@ -526,7 +526,6 @@ label.error{
 .contact-link-footer {
   text-decoration: none;
   cursor: pointer;
-
   transition: color 0.2s ease;
 }
 
@@ -2368,6 +2367,7 @@ img.mfp-img{
   font-size: 1.125em;
   line-height: 2.1;
   margin-top: 2em;
+  text-align: center;
 }
 
 .form-submit{
