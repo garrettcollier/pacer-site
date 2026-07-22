@@ -29,19 +29,22 @@
 
 
 
-	$(window).load(function(){
+	function hideLoader(){
+		$('.loader').fadeOut(200);
+	}
 
-		$('.loader').fadeOut(300);
+	$(hideLoader);
+	setTimeout(hideLoader, 1200);
 
-	});
+	if (typeof WOW !== 'undefined') {
+		var wow = new WOW({
+		    offset: 150,
+		    mobile: false
+		  }
+		);
 
-	var wow = new WOW({
-	    offset: 150,          
-	    mobile: false
-	  }
-	);
-	
-	wow.init();
+		wow.init();
+	}
 
 	var navbarDesctop=$('.navbar-desctop');
 	var navbarMobile=$('.navbar-mobile');
@@ -153,7 +156,7 @@
 
 
 	
-	if (typeof $.fn.revolution !== 'undefined') {
+	if (typeof $.fn.revolution !== 'undefined' && $('#rev_slider').length) {
       
       $("#rev_slider").revolution({
         sliderType:"standard",
@@ -202,21 +205,21 @@
           disableFocusListener:false,
         }
       });
+
+		$('.arrow-left').on('click', function(){
+	   	    $("#rev_slider").revprev();
+	  	});
+
+		$('.arrow-right').on('click', function(){
+		    $("#rev_slider").revnext();
+		});
+
+		$('.slide-number .total-count').text($('#rev_slider li').size());
+
+	    $('#rev_slider').bind("revolution.slide.onchange",function (e,data) {
+		    $('.slide-number .count').text(data.slideIndex);
+	    });
     }
-
-  	$('.arrow-left').on('click', function(){
-   	    $("#rev_slider").revprev();
-  	});
-  
-	$('.arrow-right').on('click', function(){
-	    $("#rev_slider").revnext();
-	});
-
-	$('.slide-number .total-count').text($('#rev_slider li').size());
-
-    $('#rev_slider').bind("revolution.slide.onchange",function (e,data) {
-	    $('.slide-number .count').text(data.slideIndex);
-    });
 
 
 
@@ -239,13 +242,15 @@
 
 
 
-	$(window).stellar({
-	  	responsive: true,
-	  	horizontalScrolling: false,
-	  	hideDistantElements: false,
-	  	horizontalOffset: 0,
-	  	verticalOffset: 0,
-	});
+	if (typeof $.fn.stellar !== 'undefined') {
+		$(window).stellar({
+		  	responsive: true,
+		  	horizontalScrolling: false,
+		  	hideDistantElements: false,
+		  	horizontalOffset: 0,
+		  	verticalOffset: 0,
+		});
+	}
 
 
 
@@ -255,48 +260,19 @@
 
 
 
-	$(".js-projects-carousel").owlCarousel({
-		itemsMobile:[479,1],
-		itemsTablet:[768,2],
-		itemsDesktopSmall:[979,2],
-		itemsDesktop:[1250,3],
-		items:4,
-		pagination:false,
-		navigation:true,
-		slideSpeed:700,
-		responsiveRefreshRate:0
-	});
-
-
-
-	/*-------------------------------------------------------------------------------
-	  Gallery
-	-------------------------------------------------------------------------------*/
-
-
-
-	$('.js-projects-gallery').each(function(){
-		$(this).magnificPopup({
-			delegate: 'a',
-		    type: 'image',
-		    removalDelay: 300,
-		    tLoading: 'Loading image #%curr%...',
-		    gallery: {
-		       enabled: true,
-		       navigateByImgClick: true,
-		       preload:[0,1]
-		    },
-		    image: {
-		       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-		       titleSrc: function(item) {
-		          return item.el.attr('title') + '<small></small>';
-		       }
-		    }
-
+	if (typeof $.fn.owlCarousel !== 'undefined') {
+		$(".js-projects-carousel").owlCarousel({
+			itemsMobile:[479,1],
+			itemsTablet:[768,2],
+			itemsDesktopSmall:[979,2],
+			itemsDesktop:[1250,3],
+			items:4,
+			pagination:false,
+			navigation:true,
+			slideSpeed:700,
+			responsiveRefreshRate:0
 		});
-	});
-
-
+	}
 
 	/*-------------------------------------------------------------------------------
 	  Ajax Form
@@ -304,7 +280,7 @@
 
 
 
-	if ($('.js-ajax-form').length) {
+	if (typeof $.fn.validate !== 'undefined' && $('.js-ajax-form').length) {
 		$('.js-ajax-form').each(function(){
 			$(this).validate({
 				errorClass: 'error wobble-error',

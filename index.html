@@ -6,11 +6,16 @@
 <title>Pacer LTD</title> 
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="shortcut icon" href="/img/favicon-64.png">
 
 <!-- Styles -->
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/navigation.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
@@ -45,9 +50,6 @@
     <!-- Header -->
 
     <header id="top" class="header-home">
-      <div class="header-phone">
-        <a href="tel:+15016662883" class="contact-link">(501) 666-2883</a>
-      </div>
       <div class="vertical-panel-content">
         <ul class="social-list">
           <!-- <li><a href="" class="fa fa-instagram"></a></li> -->
@@ -74,7 +76,13 @@
               <a href="#contact" class="js-target-scroll">Contact</a>
             </li>
             <li class="nav-social">
-              <a href="https://www.facebook.com/PacerLTD" class="fa fa-facebook"></a>
+              <a
+                href="https://www.facebook.com/PacerLTD"
+                target="_blank"
+                rel="noopener"
+                class="nav-social-icon fa fa-facebook"
+                aria-label="Pacer LTD on Facebook">
+              </a>
             </li>
           </ul>
         </div>
@@ -107,6 +115,15 @@
             <li>
               <a href="#contact" class="js-target-scroll">Contact</a>
             </li>
+            <li class="nav-social-mobile">
+              <a
+                href="https://www.facebook.com/PacerLTD"
+                target="_blank"
+                rel="noopener"
+                class="nav-social-icon fa fa-facebook"
+                aria-label="Pacer LTD on Facebook">
+              </a>
+            </li>
           </ul>
         </div>
       </nav> 
@@ -133,9 +150,16 @@
             Simple. Fast. Private.
           </p>
       
-          <a href="#about" class="btn btn-shadow-2 js-target-scroll">
-            Learn more
-          </a>
+          <div class="hero-actions contact-actions" aria-label="Contact Pacer LTD">
+            <a href="tel:+15016662883" class="contact-action contact-action-hero">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              Call (501) 666-2883
+            </a>
+            <a href="sms:+15016662883" class="contact-action contact-action-hero">
+              <i class="fa fa-comment" aria-hidden="true"></i>
+              Text us
+            </a>
+          </div>
         </div>
       </section>
       
@@ -182,7 +206,7 @@
                       </ul>
                     </div>
                     <div class="col-md-4">
-                      <img src="img/Tim.jpg" alt="Pacer LTD" width="250">
+                      <img class="profile-photo" src="img/Tim-optimized.jpg" alt="Tim Collier" width="250" loading="lazy" decoding="async">
                     </div>
                   </div>              
                 </div>
@@ -249,6 +273,7 @@
           <div class="map-embed">
             <iframe
               src="https://www.google.com/maps/embed?pb=!4v1618849548004!6m8!1m7!1sCAoSK0FGMVFpcFA3cGdNRF9wTmctR0hJRUNCaks0RlRMOWR0RnpHWDFBZ0d5bzg.!2m2!1d34.742249227106!2d-92.341071844061!3f15.9395!4f-14.5438!5f0.7820865974627469"
+              title="Pacer LTD location map"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen>
@@ -268,12 +293,27 @@
           <div class="section-content">
             <div class="row-base row">
               <div class="col-address col-base col-md">
-                <a href="tel:+15016662883" class="contact-link-footer">(501) 666-2883</a> Call or Text<br>
+                <div class="contact-actions">
+                  <a href="tel:+15016662883" class="contact-action">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    Call (501) 666-2883
+                  </a>
+                  <a href="sms:+15016662883" class="contact-action">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                    Text (501) 666-2883
+                  </a>
+                </div>
                 <a href="mailto:tim@pacerltd.com">tim@pacerltd.com</a><br>
                 University Tower Building<br>
                 1123 S University Ave, Suite 101<br>
                 Little Rock, AR 72204<br>
-                <a href="https://www.facebook.com/PacerLTD" class="fa fa-facebook"></a>
+                <a
+                  href="https://www.facebook.com/PacerLTD"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-icon-link fa fa-facebook"
+                  aria-label="Pacer LTD on Facebook">
+                </a>
               </div>
               <!-- <div class="col-base col-md-8">
                 <form class="js-ajax-form">
@@ -339,6 +379,8 @@
                 class="bbb-link">
                 <img src="img/Pacer-BBB.png"
                     alt="Pacer LTD BBB Accreditation"
+                    loading="lazy"
+                    decoding="async"
                     style="height: 120px; padding-bottom: 20px;">
               </a><br>
               <a href="https://sitesbycollier.com/" class="author-link">
@@ -375,9 +417,6 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/wow.min.js"></script>
 <script src="js/interface.js"></script> 
 
 </body>
