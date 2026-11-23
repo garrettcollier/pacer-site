@@ -141,6 +141,7 @@
     $('.js-target-scroll').on('click', function() {
         var target = $(this.hash);
         if (target.length) {
+            navbarMobile.find('.navbar-collapse').collapse('hide');
             $('html,body').animate({
                 scrollTop: (target.offset().top -100)
             }, 1000);
